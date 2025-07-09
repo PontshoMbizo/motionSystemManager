@@ -1,0 +1,3 @@
+G:/My Drive/cybicom/Software/project/client/build/CMakeFiles/client.dir
+G:/My Drive/cybicom/Software/project/client/build/CMakeFiles/edit_cache.dir
+G:/My Drive/cybicom/Software/project/client/build/CMakeFiles/rebuild_cache.dir
