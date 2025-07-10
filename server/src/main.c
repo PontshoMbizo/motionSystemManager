@@ -21,11 +21,14 @@ int main()
     const char *message = "server connected; from server";
 
     //start server
-    startServer(&wsa, &serverSocketfd, &serveraddr);
+    if(startServer(&wsa, &serverSocketfd, &serveraddr) != 0){
+        return 1;
+    };
 
     //communicate with client
-    communicateWithClient(&serverSocketfd, buffer, message, &clientaddr);
-
+    while(1){
+        if(communicateWithClient(&serverSocketfd, buffer, message, &clientaddr)!=0) return 1; //stop if there are any errors
+    };
 
     // Clean up
     closesocket(serverSocketfd);
@@ -61,12 +64,12 @@ int startServer(WSADATA *wsa, SOCKET *serverSocketfd, struct sockaddr_in *server
         WSACleanup();
         return 1;
     }
-
     printf("Server is running...\n");
+    return 0;
 }
 
 int communicateWithClient(SOCKET *serverSocketfd, char buffer[MAXLINE], const char *message, struct sockaddr_in *clientaddr){
-// Receive datagram
+    // Receive datagram
     int clientaddrLen = sizeof(*clientaddr);
     int n = recvfrom(*serverSocketfd, buffer, MAXLINE, 0, (struct sockaddr*)clientaddr, &clientaddrLen);
     if (n == SOCKET_ERROR) {
@@ -79,5 +82,5 @@ int communicateWithClient(SOCKET *serverSocketfd, char buffer[MAXLINE], const ch
         sendto(*serverSocketfd, message, (int)strlen(message), 0,
                (struct sockaddr*)clientaddr, clientaddrLen);
     }
-
+    return 0;
 }

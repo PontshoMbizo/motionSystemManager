@@ -12,6 +12,7 @@
 
 int startClient(WSADATA*, SOCKET*, struct sockaddr_in*);
 int connectToServer(SOCKET*, struct sockaddr_in*, const char*, char[]);
+int userInput(char []);
 
 int main()
 {
@@ -19,15 +20,15 @@ int main()
     SOCKET clientSocketfd;
     struct sockaddr_in serveraddr;
     char buffer[MAXLINE];
-    const char *message = "client connected; from client";
+    char message[MAXLINE];
 
-    if (startClient(&wsa, &clientSocketfd, &serveraddr) != 0) {
-        return 1;
-    }
+    if (startClient(&wsa, &clientSocketfd, &serveraddr) != 0) return 1;
 
-    if (connectToServer(&clientSocketfd, &serveraddr, message, buffer) != 0) {
-        return 1;
-    }
+// can send a kill session message via useInput, remember to implement that... 👍🏾
+    while(1){
+        userInput(message);
+        if (connectToServer(&clientSocketfd, &serveraddr, message, buffer) != 0) return 1; //stop if there are any errors
+    };
 
     closesocket(clientSocketfd);
     WSACleanup();
@@ -71,8 +72,6 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr, cons
         return 1;
     }
 
-    printf("Connected. Sending message...\n");
-
     // Send message
     int sent = send(*clientSocketfd, message, (int)strlen(message), 0);
     if (sent == -1) {
@@ -95,3 +94,7 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr, cons
     return 0;
 }
 
+int userInput(char message[MAXLINE]){
+    printf("Input message to send to server: ");
+    fgets(message, MAXLINE-1, stdin);
+}
