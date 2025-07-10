@@ -5,10 +5,6 @@ if (WIN32)
     message(STATUS "Building on Windows")
 endif()
 
-# Optional: Find Boost if needed later
-# find_package(Boost REQUIRED)
-# include_directories(${Boost_INCLUDE_DIRS})
-
 # Include your local headers
 include_directories(${PROJECT_SOURCE_DIR}/include)
 

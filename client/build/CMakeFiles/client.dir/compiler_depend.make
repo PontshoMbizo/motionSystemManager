@@ -21,7 +21,6 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/commdlg.h \
   C:/msys64/ucrt64/include/concurrencysal.h \
   C:/msys64/ucrt64/include/corecrt.h \
-  C:/msys64/ucrt64/include/corecrt_startup.h \
   C:/msys64/ucrt64/include/corecrt_stdio_config.h \
   C:/msys64/ucrt64/include/corecrt_wstdlib.h \
   C:/msys64/ucrt64/include/crtdefs.h \
@@ -39,7 +38,6 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/fibersapi.h \
   C:/msys64/ucrt64/include/fileapi.h \
   C:/msys64/ucrt64/include/fltwinerror.h \
-  C:/msys64/ucrt64/include/getopt.h \
   C:/msys64/ucrt64/include/guiddef.h \
   C:/msys64/ucrt64/include/handleapi.h \
   C:/msys64/ucrt64/include/heapapi.h \
@@ -47,7 +45,6 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/in6addr.h \
   C:/msys64/ucrt64/include/inaddr.h \
   C:/msys64/ucrt64/include/interlockedapi.h \
-  C:/msys64/ucrt64/include/io.h \
   C:/msys64/ucrt64/include/ioapiset.h \
   C:/msys64/ucrt64/include/jobapi.h \
   C:/msys64/ucrt64/include/joystickapi.h \
@@ -81,7 +78,6 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/oleidl.h \
   C:/msys64/ucrt64/include/playsoundapi.h \
   C:/msys64/ucrt64/include/poppack.h \
-  C:/msys64/ucrt64/include/process.h \
   C:/msys64/ucrt64/include/processenv.h \
   C:/msys64/ucrt64/include/processthreadsapi.h \
   C:/msys64/ucrt64/include/processtopologyapi.h \
@@ -100,7 +96,6 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/pshpack2.h \
   C:/msys64/ucrt64/include/pshpack4.h \
   C:/msys64/ucrt64/include/pshpack8.h \
-  C:/msys64/ucrt64/include/pthread_unistd.h \
   C:/msys64/ucrt64/include/qos.h \
   C:/msys64/ucrt64/include/realtimeapiset.h \
   C:/msys64/ucrt64/include/reason.h \
@@ -132,10 +127,8 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/stralign.h \
   C:/msys64/ucrt64/include/string.h \
   C:/msys64/ucrt64/include/stringapiset.h \
-  C:/msys64/ucrt64/include/strings.h \
   C:/msys64/ucrt64/include/swprintf.inl \
   C:/msys64/ucrt64/include/synchapi.h \
-  C:/msys64/ucrt64/include/sys/types.h \
   C:/msys64/ucrt64/include/sysinfoapi.h \
   C:/msys64/ucrt64/include/systemtopologyapi.h \
   C:/msys64/ucrt64/include/threadpoolapiset.h \
@@ -143,7 +136,6 @@ CMakeFiles/client.dir/src/main.c.obj: G:/My\ Drive/cybicom/Software/project/clie
   C:/msys64/ucrt64/include/timeapi.h \
   C:/msys64/ucrt64/include/timezoneapi.h \
   C:/msys64/ucrt64/include/tvout.h \
-  C:/msys64/ucrt64/include/unistd.h \
   C:/msys64/ucrt64/include/unknwn.h \
   C:/msys64/ucrt64/include/unknwnbase.h \
   C:/msys64/ucrt64/include/urlmon.h \
@@ -293,10 +285,6 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/tbmintrin.h:
 
 C:/msys64/ucrt64/include/ioapiset.h:
 
-C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vbmi2intrin.h:
-
-C:/msys64/ucrt64/include/io.h:
-
 C:/msys64/ucrt64/include/bemapiset.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/vpclmulqdqintrin.h:
@@ -348,12 +336,6 @@ C:/msys64/ucrt64/include/stdlib.h:
 C:/msys64/ucrt64/include/ole2.h:
 
 C:/msys64/ucrt64/include/corecrt_wstdlib.h:
-
-C:/msys64/ucrt64/include/winerror.h:
-
-C:/msys64/ucrt64/include/rpcnterr.h:
-
-C:/msys64/ucrt64/include/corecrt_startup.h:
 
 C:/msys64/ucrt64/include/winsvc.h:
 
@@ -445,8 +427,6 @@ C:/msys64/ucrt64/include/fileapi.h:
 
 C:/msys64/ucrt64/include/fltwinerror.h:
 
-C:/msys64/ucrt64/include/getopt.h:
-
 C:/msys64/ucrt64/include/sec_api/string_s.h:
 
 C:/msys64/ucrt64/include/libloaderapi.h:
@@ -459,6 +439,10 @@ C:/msys64/ucrt64/include/joystickapi.h:
 
 C:/msys64/ucrt64/include/handleapi.h:
 
+C:/msys64/ucrt64/include/ncrypt.h:
+
+C:/msys64/ucrt64/include/mstcpip.h:
+
 C:/msys64/ucrt64/include/heapapi.h:
 
 C:/msys64/ucrt64/include/in6addr.h:
@@ -469,6 +453,8 @@ C:/msys64/ucrt64/include/limits.h:
 
 C:/msys64/ucrt64/include/lzexpand.h:
 
+C:/msys64/ucrt64/include/msxml.h:
+
 C:/msys64/ucrt64/include/pshpack1.h:
 
 C:/msys64/ucrt64/include/mciapi.h:
@@ -478,12 +464,6 @@ C:/msys64/ucrt64/include/minwinbase.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/shaintrin.h:
 
 C:/msys64/ucrt64/include/mmsystem.h:
-
-C:/msys64/ucrt64/include/ncrypt.h:
-
-C:/msys64/ucrt64/include/mstcpip.h:
-
-C:/msys64/ucrt64/include/msxml.h:
 
 C:/msys64/ucrt64/include/nb30.h:
 
@@ -514,8 +494,6 @@ C:/msys64/ucrt64/include/oleidl.h:
 C:/msys64/ucrt64/include/playsoundapi.h:
 
 C:/msys64/ucrt64/include/poppack.h:
-
-C:/msys64/ucrt64/include/process.h:
 
 C:/msys64/ucrt64/include/processenv.h:
 
@@ -557,8 +535,6 @@ C:/msys64/ucrt64/include/wincon.h:
 
 C:/msys64/ucrt64/include/pshpack8.h:
 
-C:/msys64/ucrt64/include/pthread_unistd.h:
-
 C:/msys64/ucrt64/include/qos.h:
 
 C:/msys64/ucrt64/include/realtimeapiset.h:
@@ -574,6 +550,10 @@ C:/msys64/ucrt64/include/rpcdce.h:
 C:/msys64/ucrt64/include/rpcdcep.h:
 
 C:/msys64/ucrt64/include/rpcndr.h:
+
+C:/msys64/ucrt64/include/winerror.h:
+
+C:/msys64/ucrt64/include/rpcnterr.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/fmaintrin.h:
 
@@ -611,15 +591,11 @@ C:/msys64/ucrt64/include/stralign.h:
 
 C:/msys64/ucrt64/include/stringapiset.h:
 
-C:/msys64/ucrt64/include/strings.h:
-
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/hresetintrin.h:
 
 C:/msys64/ucrt64/include/swprintf.inl:
 
 C:/msys64/ucrt64/include/synchapi.h:
-
-C:/msys64/ucrt64/include/sys/types.h:
 
 C:/msys64/ucrt64/include/sysinfoapi.h:
 
@@ -636,8 +612,6 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/cetintrin.h:
 C:/msys64/ucrt64/include/timezoneapi.h:
 
 C:/msys64/ucrt64/include/tvout.h:
-
-C:/msys64/ucrt64/include/unistd.h:
 
 C:/msys64/ucrt64/include/unknwn.h:
 
@@ -748,6 +722,8 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512ifmaintrin.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512ifmavlintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512pfintrin.h:
+
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vbmi2intrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/avx512vbmi2vlintrin.h:
 
