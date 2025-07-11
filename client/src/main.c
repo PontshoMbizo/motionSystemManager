@@ -4,30 +4,33 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
-#pragma comment(lib, "ws2_32.lib")  // Link Winsock library
+#include "../../include/motion_system_messages.h" //message structure def in here...
+
+#pragma comment(lib, "ws2_32.lib")
 
 #define PORT 5000
 #define MAXLINE 1000
 #define IP "127.0.0.1"
 
 int startClient(WSADATA*, SOCKET*, struct sockaddr_in*);
-int connectToServer(SOCKET*, struct sockaddr_in*, const char*, char[]);
-int userInput(char []);
+int connectToServer(SOCKET*, struct sockaddr_in*, MessageToMotionSystem, MessageFromMotionSystem);
+int userInput(MessageToMotionSystem*);
+void printMessageFromMotionSystem(MessageFromMotionSystem*); //will write...
 
 int main()
 {
     WSADATA wsa;
     SOCKET clientSocketfd;
     struct sockaddr_in serveraddr;
-    char buffer[MAXLINE];
-    char message[MAXLINE];
+    MessageFromMotionSystem messageFromMotionSystem;
+    MessageToMotionSystem message;
 
     if (startClient(&wsa, &clientSocketfd, &serveraddr) != 0) return 1;
 
 // can send a kill session message via useInput, remember to implement that... 👍🏾
     while(1){
-        userInput(message);
-        if (connectToServer(&clientSocketfd, &serveraddr, message, buffer) != 0) return 1; //stop if there are any errors
+        userInput(&message);
+        if (connectToServer(&clientSocketfd, &serveraddr, message, messageFromMotionSystem) != 0) return 1; //stop if there are any errors
     };
 
     closesocket(clientSocketfd);
@@ -61,7 +64,7 @@ int startClient(WSADATA *wsa, SOCKET *clientSocketfd, struct sockaddr_in *server
     return 0;
 }
 
-int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr, const char *message, char buffer[MAXLINE])
+int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr,MessageToMotionSystem message, MessageFromMotionSystem messageFromMotionSystem)
 {
     printf("Connecting...\n");
 
@@ -72,8 +75,8 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr, cons
         return 1;
     }
 
-    // Send message
-    int sent = send(*clientSocketfd, message, (int)strlen(message), 0);
+    // send the message struct as a byte messageFromMotionSystem
+    int sent = send(*clientSocketfd, (char*) &message, (int)sizeof(message), 0);
     if (sent == -1) {
         printf("Send failed. Error: %d\n", WSAGetLastError());
         closesocket(*clientSocketfd);
@@ -83,18 +86,36 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr, cons
 
     // Receive response
     printf("Waiting for response...\n");
-    int received = recv(*clientSocketfd, buffer, MAXLINE - 1, 0);
+    int received = recv(*clientSocketfd, (char*)&messageFromMotionSystem, sizeof(messageFromMotionSystem), 0);
     if (received == -1) {
         printf("Receive failed. Error: %d\n", WSAGetLastError());
     } else {
-        buffer[received] = '\0';
-        printf("Received from server: %s\n", buffer);
+        printf("Received from server: %s\n", messageFromMotionSystem);
     }
 
     return 0;
 }
 
-int userInput(char message[MAXLINE]){
-    printf("Input message to send to server: ");
-    fgets(message, MAXLINE-1, stdin);
+int userInput(MessageToMotionSystem *message){
+    printf("set control_state: ");
+    scanf("%d", &(message->data.control_state));
+    printf("set x: ");
+    scanf("%d", &(message->data.x));
+    printf("set x_lim1: ");
+    scanf("%d", &(message->data.x_lim1));
+    printf("set x_lim2: ");
+    scanf("%d", &(message->data.x_lim2));
+    printf("set x_cycle_time: ");
+    scanf("%d", &(message->data.x_cycle_time));
+    printf("set y: ");
+    scanf("%d", &(message->data.y));
+    printf("set y_lim1: ");
+    scanf("%d", &(message->data.y_lim1));
+    printf("set y_lim2: ");
+    scanf("%d", &(message->data.y_lim2));
+    printf("set y_cycle_time: ");
+    scanf("%d", &(message->data.y_cycle_time));
+    printf("set life_counter: ");
+    scanf("%d", &(message->data.life_counter));
+    printf("end of current input...");
 }

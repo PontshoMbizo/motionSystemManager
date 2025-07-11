@@ -224,4 +224,7 @@ CMakeFiles/client.dir/src/main.c.obj: \
  C:/msys64/ucrt64/include/qos.h C:/msys64/ucrt64/include/ws2tcpip.h \
  C:/msys64/ucrt64/include/ws2ipdef.h C:/msys64/ucrt64/include/in6addr.h \
  C:/msys64/ucrt64/include/psdk_inc/_ip_mreq1.h \
- C:/msys64/ucrt64/include/mstcpip.h
+ C:/msys64/ucrt64/include/mstcpip.h \
+ G:/My\ Drive/cybicom/Software/project/include/motion_system_messages.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h

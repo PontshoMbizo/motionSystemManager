@@ -6,7 +6,7 @@ if (WIN32)
 endif()
 
 # Include your local headers
-include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/../include)
 
 # Source files (relative to project root, not parent)
 file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true src/*.c)
