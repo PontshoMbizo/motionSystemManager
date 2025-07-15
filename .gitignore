@@ -1,0 +1,7 @@
+# Ignore all build directories
+./client/build
+./server/build
+**/build/
+
+# Ignore .vscode directory
+.vscode/

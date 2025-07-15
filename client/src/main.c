@@ -68,6 +68,7 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr,Messa
 {
     printf("Connecting...\n");
 
+    //connect to be on its own thread...
     if (connect(*clientSocketfd, (struct sockaddr*)serveraddr, sizeof(*serveraddr)) == -1) {
         printf("Connection failed. Error: %d\n", WSAGetLastError());
         closesocket(*clientSocketfd);
@@ -75,6 +76,8 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr,Messa
         return 1;
     }
 
+    
+    //send messages on its own thread...
     // send the message struct as a byte messageFromMotionSystem
     int sent = send(*clientSocketfd, (char*) &message, (int)sizeof(message), 0);
     if (sent == -1) {
@@ -83,6 +86,8 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr,Messa
         WSACleanup();
         return 1;
     }
+
+    //read messages on its own thread...
 
     // Receive response
     printf("Waiting for response...\n");
@@ -97,25 +102,25 @@ int connectToServer(SOCKET *clientSocketfd, struct sockaddr_in *serveraddr,Messa
 }
 
 int userInput(MessageToMotionSystem *message){
-    printf("set control_state: ");
-    scanf("%d", &(message->data.control_state));
-    printf("set x: ");
-    scanf("%d", &(message->data.x));
-    printf("set x_lim1: ");
-    scanf("%d", &(message->data.x_lim1));
-    printf("set x_lim2: ");
-    scanf("%d", &(message->data.x_lim2));
-    printf("set x_cycle_time: ");
-    scanf("%d", &(message->data.x_cycle_time));
-    printf("set y: ");
-    scanf("%d", &(message->data.y));
-    printf("set y_lim1: ");
-    scanf("%d", &(message->data.y_lim1));
-    printf("set y_lim2: ");
-    scanf("%d", &(message->data.y_lim2));
-    printf("set y_cycle_time: ");
-    scanf("%d", &(message->data.y_cycle_time));
-    printf("set life_counter: ");
-    scanf("%d", &(message->data.life_counter));
-    printf("end of current input...");
+        printf("set control_state: ");
+        scanf("%d", &(message->data.control_state));
+        printf("set x: ");
+        scanf("%d", &(message->data.x));
+        printf("set x_lim1: ");
+        scanf("%d", &(message->data.x_lim1));
+        printf("set x_lim2: ");
+        scanf("%d", &(message->data.x_lim2));
+        printf("set x_cycle_time: ");
+        scanf("%d", &(message->data.x_cycle_time));
+        printf("set y: ");
+        scanf("%d", &(message->data.y));
+        printf("set y_lim1: ");
+        scanf("%d", &(message->data.y_lim1));
+        printf("set y_lim2: ");
+        scanf("%d", &(message->data.y_lim2));
+        printf("set y_cycle_time: ");
+        scanf("%d", &(message->data.y_cycle_time));
+        printf("set life_counter: ");
+        scanf("%d", &(message->data.life_counter));
+        printf("end of current input...");
 }

@@ -53,7 +53,7 @@ typedef struct
     uint16_t y;                   // Position Y
     uint16_t y_dot;               // Velocity Y
     uint16_t y_ddot;              // Acceleration Y
-    uint16_t life_counter;        // Life counter value
+    uint16_t life_counter;        // Life counter value (monitor life counter, increment it per trans.)
 } DataFromMotionSystem;
 
 // Complete message received from the Motion System (42 bytes)
