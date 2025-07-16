@@ -6,7 +6,7 @@
 
 #define client_IP "127.0.0.1"
 #define client_PORT 5000
-//define server ip when needed
+#define server_IP INADDR_ANY
 #define server_PORT 5000
 
 int main(){

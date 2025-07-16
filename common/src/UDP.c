@@ -1,12 +1,4 @@
-#ifndef UDP_H
-#define UDP_H
-
-#pragma comment(lib, "ws2_32.lib")
-
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#include <stdio.h>
-#include <string.h>
+#include "../include/UDP.h"
 
 int startUDPServer(WSADATA *wsa, SOCKET *serverSocketfd, struct sockaddr_in *serveraddr, int port, char* ip){
     printf("Initializing Winsock...\n");
@@ -84,9 +76,9 @@ int sendUDPMessage(SOCKET *socketfd, struct sockaddr_in *addr,char* buffer, int 
     }
     return 0;   
 }
-int receiveUDPMessage(SOCKET *socketfd, char* buffer){
+int receiveUDPMessage(SOCKET *socketfd, char* buffer, int bufferSize){
 
-    if (recv(*socketfd, buffer, sizeof(buffer), 0) == SOCKET_ERROR) {
+    if (recv(*socketfd, buffer, bufferSize, 0) == SOCKET_ERROR) {
         printf("Receive failed. Error: %d\n", WSAGetLastError());  return 1;
     }
     return 0;
@@ -102,5 +94,3 @@ int receiveUDPMessageWithAddr(SOCKET *socketfd, char* buffer, int bufferSize, st
     }
     return 0;
 }
-
-#endif // UDP_H

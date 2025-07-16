@@ -1,7 +1,5 @@
-#ifndef PROCESS_MESSAGE_H
-#define PROCESS_MESSAGE_H
-
-#include "./motion_system_messages.h"
+#include <stdio.h>
+#include "../include/motion_system_messages.h"
 
 void printMessageT(MessageToMotionSystem *messageFromClient){
     printf("%d",messageFromClient->data.control_state);
@@ -37,5 +35,3 @@ void printMessageF(MessageFromMotionSystem *messageFromMotionSystem){
     printf("%d",messageFromMotionSystem->data.y_ddot);
     printf("%d\n",messageFromMotionSystem->data.y_dot);
 }
-
-#endif // PROCESS_MESSAGE_H
