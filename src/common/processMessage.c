@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/motion_system_messages.h"
+#include "../../include/common/motion_system_messages.h"
 
 void printMessageT(MessageToMotionSystem *messageFromClient){
     printf("%d",messageFromClient->data.control_state);

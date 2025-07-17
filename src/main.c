@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#include "../include/msm.h"
+#include "../include/manager/msm.h"
 
 #define client_IP "127.0.0.1"
 #define client_PORT 5000
@@ -29,6 +29,7 @@ int main(){
     pthread_create(&server, NULL, server_thread, &serverArg);
     pthread_join(client, NULL);
     pthread_join(server, NULL);
+    //add
     return 0;
 }
 

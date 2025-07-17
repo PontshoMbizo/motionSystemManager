@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../include/client.h"
+#include "../../include/client/client.h"
 #define client_PORT 5000
 #define client_IP "127.0.0.1"
 
