@@ -6,13 +6,13 @@
 #include "../server/server.h"
 
 typedef struct {
-    MessageToMotionSystem *message;
+    MessageToMotionSystem *messageToMS;
     int port;
     char *ip;
 } ClientThreadArgs;
 
 typedef struct {
-    MessageToMotionSystem *messageFromClient;
+    MessageFromMotionSystem *messageFromMS;
     int port;
     char *ip;
 } ServerThreadArgs;

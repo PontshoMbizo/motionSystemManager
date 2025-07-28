@@ -8,6 +8,8 @@
 #define TO_BufferSize sizeof(MessageToMotionSystem)
 #define FROM_BufferSize sizeof(MessageFromMotionSystem)
 
-int UDPServer(MessageToMotionSystem *messageFromClient, int port, char* ip);
-
+int UDPServer(MessageFromMotionSystem *messageFromMS, int port, char* ip);
+int initializeMessageT(MessageFromMotionSystem *messageFromMS, MessageFromMotionSystem *messageToClient);
+int compareLifeCounter(MessageFromMotionSystem *messageFromMS); //complete later
+int validateCheckSum(MessageFromMotionSystem *messageFromMS);
 #endif // SERVER_H
