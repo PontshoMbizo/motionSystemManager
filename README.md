@@ -100,7 +100,7 @@ Then build the server
 
 ### ▶️ Run the Applications
 
-In two separate terminals or command prompts, run:
+In two separate terminals, run:
 
 ```bash
 ./client.exe
@@ -110,7 +110,5 @@ In two separate terminals or command prompts, run:
 ./server.exe
 ```
 
-They should communicate over UDP, exchanging messages like
-
-This setup enables bidirectional, real-time communication between two independently compiled applications.
+They should communicate over UDP, exchanging messages. This setup enables bidirectional, real-time communication between two independently compiled applications.
 
