@@ -12,33 +12,34 @@ This project implements a **bidirectional UDP communication interface** for a mo
 - ✅ Loopback/local testing support (`127.0.0.1`)
 
 ## 📁 Project Structure
-.\n
-include/\n
-	client/\n
-		client.h\n
-	common/\n
-		motion_system_messages.h\n
-		process_message.h\n
-		UDP.h\n
-	manager/\n
-		msm.h\n
-	server/\n
-		server.h\n
-src/\n
-	client/\n
-		client.c\n
-	common/\n
-		processMessage.c\n
-		UDP.c\n
-	manager/\n
-		msm.c\n
-	server/\n
-		server.c\n
-	main.c\n
-.gitignore\n
-CMakeLists.txt\n
-README.md\n
-
+```
+.
+├── include
+│   ├── client
+│   │   └── client.h
+│   ├── common
+│   │   ├── motion_system_messages.h
+│   │   ├── process_message.h
+│   │   └── UDP.h
+│   ├── manager
+│   │   └── msm.h
+│   └── server
+│       └── server.h
+├── src
+│   ├── client
+│   │   └── client.c
+│   ├── common
+│   │   ├── processMessage.c
+│   │   └── UDP.c
+│   ├── manager
+│   │   └── msm.c
+│   ├── server
+│   │   └── server.c
+│   └── main.c
+├── .gitignore
+├── CMakeLists.txt
+└── README.md
+```
 
 ## 🧪 How It Works
 
