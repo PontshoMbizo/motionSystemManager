@@ -13,31 +13,32 @@ This project implements a **bidirectional UDP communication interface** for a mo
 
 ## 📁 Project Structure
 .
-├── include
-│   ├── client
-│   │   └── client.h
-│   ├── common
-│   │   ├── motion_system_messages.h
-│   │   ├── process_message.h
-│   │   └── UDP.h
-│   ├── manager
-│   │   └── msm.h
-│   └── server
-│       └── server.h
-├── src
-│   ├── client
-│   │   └── client.c
-│   ├── common
-│   │   ├── processMessage.c
-│   │   └── UDP.c
-│   ├── manager
-│   │   └── msm.c
-│   ├── server
-│   │   └── server.c
-│   └── main.c
-├── .gitignore
-├── CMakeLists.txt
-└── README.md
+include
+	client
+		client.h
+	common
+		motion_system_messages.h
+		process_message.h
+		UDP.h
+	manager
+		msm.h
+	server
+		server.h
+src
+	client
+		client.c
+	common
+		processMessage.c
+		UDP.c
+	manager
+		msm.c
+	server
+		server.c
+	main.c
+.gitignore
+CMakeLists.txt
+README.md
+
 
 ## 🧪 How It Works
 
