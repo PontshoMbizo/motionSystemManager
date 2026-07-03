@@ -112,3 +112,31 @@ In two separate terminals, run:
 
 They should communicate over UDP, exchanging messages. This setup enables bidirectional, real-time communication between two independently compiled applications.
 
+
+
+
+
+
+
+```powershell
+@'
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule name="ReverseProxyInboundRule1" stopProcessing="true">
+                    <match url="(.*)" />
+                    <action type="Rewrite" url="http://127.0.0.1:3001/{R:1}" />
+                    <serverVariables>
+                        <set name="HTTP_X_FORWARDED_HOST" value="{HTTP_HOST}" />
+                        <set name="HTTP_X_FORWARDED_PROTO" value="http" />
+                        <set name="HTTP_X_FORWARDED_FOR" value="{REMOTE_ADDR}" />
+                    </serverVariables>
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>
+'@ | Out-File -FilePath "C:\inetpub\forgejo\web.config" -Encoding utf8
+```
