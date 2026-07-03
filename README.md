@@ -118,9 +118,5 @@ They should communicate over UDP, exchanging messages. This setup enables bidire
 
 
 
-```powershell
-Import-Module WebAdministration
-Add-WebConfiguration -Filter "/system.webServer/rewrite/allowedServerVariables" -PSPath "IIS:\" -Value @{name="HTTP_X_FORWARDED_HOST"}
-Add-WebConfiguration -Filter "/system.webServer/rewrite/allowedServerVariables" -PSPath "IIS:\" -Value @{name="HTTP_X_FORWARDED_PROTO"}
-Add-WebConfiguration -Filter "/system.webServer/rewrite/allowedServerVariables" -PSPath "IIS:\" -Value @{name="HTTP_X_FORWARDED_FOR"}
-```
+Copy-Item "C:\Windows\System32\inetsrv\config\applicationHost.config" "C:\Windows\System32\inetsrv\config\applicationHost.config.bak"
+notepad "C:\Windows\System32\inetsrv\config\applicationHost.config"
